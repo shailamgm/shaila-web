@@ -1,0 +1,965 @@
+import type { Content, Locale, Localized } from "./types";
+
+/** Atajo para escribir las tres traducciones juntas y revisarlas de un vistazo. */
+const l = <T>(es: T, ca: T, en: T): Localized<T> => ({ es, ca, en });
+
+const es: Content = {
+  meta: {
+    title: "Shaila Martínez — Sistemas y Soporte IT",
+    description:
+      "Portafolio de Shaila Martínez, estudiante de ASIX con experiencia en soporte informático en entornos educativos y hospitalarios.",
+    keywords: [
+      "Shaila Martínez",
+      "ASIX",
+      "sistemas",
+      "redes",
+      "soporte IT",
+      "soporte técnico",
+      "Linux",
+      "Windows Server",
+      "Active Directory",
+      "Docker",
+      "AWS Academy",
+      "Cloud Foundations",
+    ],
+  },
+
+  hero: {
+    greeting: "Hola, soy",
+    // Áreas confirmadas, usadas en el efecto de escritura.
+    roles: ["Sistemas y Soporte IT", "Administración de sistemas", "Soporte a usuarios"],
+    intro: null, // TODO: presentación de 1-2 líneas, pendiente de redactar juntos.
+  },
+
+  about: {
+    // Biografía aprobada por Shaila (sin cambios).
+    paragraphs: [
+      "Soy estudiante de Administración de Sistemas Informáticos en Red (ASIX), con formación previa en Sistemas Microinformáticos y Redes (SMX). Tengo experiencia en soporte informático en entornos educativos y hospitalarios, realizando tareas de resolución de incidencias, mantenimiento de equipos y soporte de redes y sistemas. Me interesa seguir aprendiendo y desarrollándome profesionalmente en el ámbito de la administración de sistemas y las tecnologías IT.",
+    ],
+    facts: [
+      { label: "Enfoque", value: "Sistemas y Soporte IT" },
+      { label: "Idiomas", value: "Español nativo · Catalán nativo · Inglés B1" },
+    ],
+  },
+
+  skills: {
+    intro: null, // TODO
+    groups: [
+      {
+        id: "os",
+        title: l("Sistemas operativos", "Sistemes operatius", "Operating systems"),
+        items: ["Linux", "Windows Server"],
+      },
+      {
+        id: "networking",
+        title: l("Redes", "Xarxes", "Networking"),
+        items: ["DNS", "BIND9", "DHCP", "Kea"],
+      },
+      {
+        id: "identity",
+        title: l("Identidad y directorios", "Identitat i directoris", "Identity and directories"),
+        items: ["Active Directory", "LDAP"],
+      },
+      {
+        id: "containers",
+        title: l("Contenedores", "Contenidors", "Containers"),
+        items: ["Docker"],
+      },
+      {
+        id: "automation",
+        title: l("Automatización", "Automatització", "Automation"),
+        items: ["PowerShell"],
+      },
+      {
+        id: "web",
+        title: l("Desarrollo web", "Desenvolupament web", "Web development"),
+        items: ["PHP"],
+      },
+      {
+        id: "security",
+        // Área confirmada; las herramientas concretas están pendientes.
+        title: l("Seguridad informática", "Seguretat informàtica", "IT security"),
+        items: [], // TODO: herramientas concretas, sin inventar.
+      },
+    ],
+  },
+
+  projects: {
+    intro: "Selección de prácticas y proyectos académicos de ASIX. Cada ficha enlaza a su repositorio público, donde puedes consultar el código y la documentación.",
+    items: [
+      {
+        slug: "servicios-red-internet",
+        kind: "practica",
+        title: l(
+          "Servicios de red e Internet",
+          "Serveis de xarxa i Internet",
+          "Network and Internet Services",
+        ),
+        summary: l(
+          "Colección de prácticas académicas de ASIX dedicadas a servicios de red e Internet. Reúne el despliegue de un servicio DHCP con Kea, su monitorización con Prometheus y Grafana, la configuración de alta disponibilidad con Kea Hot-Standby, un servidor DNS con BIND9 y la implementación de DNS dinámico con DNSSEC.",
+          "Col·lecció de pràctiques acadèmiques d'ASIX dedicades a serveis de xarxa i Internet. Reuneix el desplegament d'un servei DHCP amb Kea, la seva monitorització amb Prometheus i Grafana, la configuració d'alta disponibilitat amb Kea Hot-Standby, un servidor DNS amb BIND9 i la implementació de DNS dinàmic amb DNSSEC.",
+          "A collection of ASIX academic practices on network and Internet services. It covers the deployment of a DHCP service with Kea, its monitoring with Prometheus and Grafana, high availability with Kea Hot-Standby, a DNS server with BIND9, and dynamic DNS with DNSSEC.",
+        ),
+        highlights: l(
+          [
+            "Servicio DHCP con Kea",
+            "Monitorización DHCP con Prometheus y Grafana",
+            "Alta disponibilidad DHCP con Kea Hot-Standby",
+            "Servidor DNS con BIND9",
+            "DNS dinámico y DNSSEC",
+          ],
+          [
+            "Servei DHCP amb Kea",
+            "Monitoratge DHCP amb Prometheus i Grafana",
+            "Alta disponibilitat DHCP amb Kea Hot-Standby",
+            "Servidor DNS amb BIND9",
+            "DNS dinàmic i DNSSEC",
+          ],
+          [
+            "DHCP service with Kea",
+            "DHCP monitoring with Prometheus and Grafana",
+            "DHCP high availability with Kea Hot-Standby",
+            "DNS server with BIND9",
+            "Dynamic DNS and DNSSEC",
+          ],
+        ),
+        stack: [
+          "Kea",
+          "BIND9",
+          "DNS",
+          "DHCP",
+          "Prometheus",
+          "Grafana",
+          "Docker",
+          "Python",
+          "DNSSEC",
+        ],
+        status: null, // Pendiente: confirmar "finalizado" o "documentado".
+        links: {
+          demo: null,
+          repo: "https://github.com/shailamgm/Network-and-Internet-services",
+        },
+        image: null,
+      },
+      {
+        slug: "hospivibe",
+        kind: "proyecto",
+        title: l("HospiVibe", "HospiVibe", "HospiVibe"),
+        summary: l(
+          "Proyecto académico intermodular de ASIX consistente en una aplicación de gestión hospitalaria para administrar información de pacientes, personal médico y servicios del centro. El repositorio incluye la planificación, el diseño de la base de datos relacional, la conectividad y la autenticación, la seguridad, el mantenimiento, la alta disponibilidad, las consultas y la exportación de datos.",
+          "Projecte acadèmic intermodular d'ASIX consistent en una aplicació de gestió hospitalària per administrar informació de pacients, personal mèdic i serveis del centre. El repositori inclou la planificació, el disseny de la base de dades relacional, la connectivitat i l'autenticació, la seguretat, el manteniment, l'alta disponibilitat, les consultes i l'exportació de dades.",
+          "An ASIX cross-module academic project consisting of a hospital management application for handling patient, medical staff and hospital service information. The repository covers project planning, relational database design, database connectivity and authentication, security, maintenance, high availability, queries and data export.",
+        ),
+        highlights: l(
+          [
+            "Planificación del proyecto",
+            "Diseño de la base de datos relacional",
+            "Conectividad y autenticación",
+            "Seguridad y control de acceso",
+            "Mantenimiento de la base de datos",
+            "Alta disponibilidad con replicación",
+            "Consultas a la base de datos",
+            "Exportación de datos",
+          ],
+          [
+            "Planificació del projecte",
+            "Disseny de la base de dades relacional",
+            "Connectivitat i autenticació",
+            "Seguretat i control d'accés",
+            "Manteniment de la base de dades",
+            "Alta disponibilitat amb replicació",
+            "Consultes a la base de dades",
+            "Exportació de dades",
+          ],
+          [
+            "Project planning",
+            "Relational database design",
+            "Database connectivity and authentication",
+            "Security and access control",
+            "Database maintenance",
+            "High availability with replication",
+            "Database queries",
+            "Data export",
+          ],
+        ),
+        stack: [
+          "Python",
+          "PostgreSQL",
+          "CustomTkinter",
+          "bcrypt",
+          "PL/pgSQL",
+          "Power BI",
+          "Shell",
+          "Linux",
+        ],
+        status: null, // Pendiente: confirmar "finalizado" o "documentado".
+        links: {
+          demo: null,
+          repo: "https://github.com/shailamgm/Projecte_intermodular_ASIX_HOSPITAL",
+        },
+        image: null,
+      },
+    ],
+  },
+
+  experience: {
+    intro: null, // TODO
+    practice: [
+      {
+        id: "hospital-blanes",
+        organization: l("Hospital Blanes", "Hospital Blanes", "Hospital Blanes"),
+        role: l(
+          "Prácticas de Sistemas y Soporte IT",
+          "Pràctiques de Sistemes i Suport IT",
+          "Systems and IT Support Internship",
+        ),
+        period: l(
+          "Del 25/02/2026 al 20/11/2026",
+          "Del 25/02/2026 al 20/11/2026",
+          "From 25 Feb 2026 to 20 Nov 2026",
+        ),
+        status: "en-curso",
+        description: null, // TODO
+        tasks: l(
+          [
+            "Atención y resolución de incidencias técnicas a usuarios",
+            "Gestión y mantenimiento de equipos informáticos",
+            "Soporte en redes y sistemas",
+            "Instalación, configuración y actualización de software",
+          ],
+          [
+            "Atenció i resolució d'incidències tècniques als usuaris",
+            "Gestió i manteniment d'equips informàtics",
+            "Suport en xarxes i sistemes",
+            "Instal·lació, configuració i actualització de programari",
+          ],
+          [
+            "Handling and resolving technical incidents for users",
+            "IT equipment management and maintenance",
+            "Network and systems support",
+            "Software installation, configuration and updates",
+          ],
+        ),
+      },
+      {
+        id: "escola-joaquim-ruyra",
+        organization: l(
+          "Escola Joaquim Ruyra",
+          "Escola Joaquim Ruyra",
+          "Escola Joaquim Ruyra",
+        ),
+        role: l(
+          "Prácticas de soporte técnico",
+          "Pràctiques de suport tècnic",
+          "Technical support internship",
+        ),
+        period: l(
+          "Del 01/10/2024 al 10/03/2025",
+          "Del 01/10/2024 al 10/03/2025",
+          "From 1 Oct 2024 to 10 Mar 2025",
+        ),
+        status: "finalizado",
+        description: null, // TODO
+        tasks: l(
+          [
+            "Soporte técnico a alumnos y profesores",
+            "Mantenimiento de equipos",
+            "Resolución de incidencias mediante herramientas digitales",
+          ],
+          [
+            "Suport tècnic a alumnes i professors",
+            "Manteniment d'equips",
+            "Resolució d'incidències mitjançant eines digitals",
+          ],
+          [
+            "Technical support for students and teachers",
+            "Equipment maintenance",
+            "Troubleshooting incidents using digital tools",
+          ],
+        ),
+      },
+    ],
+    education: [
+      {
+        id: "asix",
+        title: l(
+          "Administración de Sistemas Informáticos en Red (ASIX)",
+          "Administració de Sistemes Informàtics en Xarxa (ASIX)",
+          "Network Computer Systems Administration (ASIX)",
+        ),
+        center: "Sa Palomera, Blanes",
+        period: l("Desde 2025", "Des del 2025", "Since 2025"),
+        status: "en-curso",
+      },
+      {
+        id: "smx",
+        title: l(
+          "Sistemas Microinformáticos y Redes (SMX)",
+          "Sistemes Microinformàtics i Xarxes (SMX)",
+          "Microcomputer Systems and Networks (SMX)",
+        ),
+        center: "Sa Palomera, Blanes",
+        period: l("2025", "2025", "2025"),
+        status: "finalizado",
+      },
+    ],
+    certifications: [
+      {
+        id: "word-specialist",
+        name: "Microsoft Office Word Specialist",
+        issuer: "Certiport",
+        year: null, // TODO
+      },
+      {
+        id: "aws-cloud-foundations",
+        name: "AWS Academy Graduate – Cloud Foundations",
+        issuer: "AWS Academy",
+        year: null, // TODO: no se inventa el año.
+      },
+    ],
+  },
+
+  contact: {
+    intro: null, // TODO
+  },
+};
+
+const ca: Content = {
+  meta: {
+    title: "Shaila Martínez — Sistemes i Suport IT",
+    description:
+      "Portafolis de Shaila Martínez, estudiant d'ASIX amb experiència en suport informàtic en entorns educatius i hospitalaris.",
+    keywords: [
+      "Shaila Martínez",
+      "ASIX",
+      "sistemes",
+      "xarxes",
+      "suport IT",
+      "suport tècnic",
+      "Linux",
+      "Windows Server",
+      "Active Directory",
+      "Docker",
+      "AWS Academy",
+      "Cloud Foundations",
+    ],
+  },
+
+  hero: {
+    greeting: "Hola, soc",
+    roles: ["Sistemes i Suport IT", "Administració de sistemes", "Suport a usuaris"],
+    intro: null,
+  },
+
+  about: {
+    paragraphs: [
+      "Sóc estudiant d'Administració de Sistemes Informàtics en Xarxa (ASIX), amb formació prèvia en Sistemes Microinformàtics i Xarxes (SMX). Tinc experiència en suport informàtic en entorns educatius i hospitalaris, duent a terme tasques de resolució d'incidències, manteniment d'equips i suport de xarxes i sistemes. M'interessa continuar aprenent i desenvolupant-me professionalment en l'àmbit de l'administració de sistemes i les tecnologies IT.",
+    ],
+    facts: [
+      { label: "Enfocament", value: "Sistemes i Suport IT" },
+      { label: "Idiomes", value: "Espanyol natiu · Català natiu · Anglès B1" },
+    ],
+  },
+
+  skills: {
+    intro: null,
+    groups: [
+      {
+        id: "os",
+        title: l("Sistemas operativos", "Sistemes operatius", "Operating systems"),
+        items: ["Linux", "Windows Server"],
+      },
+      {
+        id: "networking",
+        title: l("Redes", "Xarxes", "Networking"),
+        items: ["DNS", "BIND9", "DHCP", "Kea"],
+      },
+      {
+        id: "identity",
+        title: l("Identidad y directorios", "Identitat i directoris", "Identity and directories"),
+        items: ["Active Directory", "LDAP"],
+      },
+      {
+        id: "containers",
+        title: l("Contenedores", "Contenidors", "Containers"),
+        items: ["Docker"],
+      },
+      {
+        id: "automation",
+        title: l("Automatización", "Automatització", "Automation"),
+        items: ["PowerShell"],
+      },
+      {
+        id: "web",
+        title: l("Desarrollo web", "Desenvolupament web", "Web development"),
+        items: ["PHP"],
+      },
+      {
+        id: "security",
+        title: l("Seguridad informática", "Seguretat informàtica", "IT security"),
+        items: [],
+      },
+    ],
+  },
+
+  projects: {
+    intro: "Selecció de pràctiques i projectes acadèmics d'ASIX. Cada fitxa enllaça al seu repositori públic, on pots consultar el codi i la documentació.",
+    items: [
+      {
+        slug: "servicios-red-internet",
+        kind: "practica",
+        title: l(
+          "Servicios de red e Internet",
+          "Serveis de xarxa i Internet",
+          "Network and Internet Services",
+        ),
+        summary: l(
+          "Colección de prácticas académicas de ASIX dedicadas a servicios de red e Internet. Reúne el despliegue de un servicio DHCP con Kea, su monitorización con Prometheus y Grafana, la configuración de alta disponibilidad con Kea Hot-Standby, un servidor DNS con BIND9 y la implementación de DNS dinámico con DNSSEC.",
+          "Col·lecció de pràctiques acadèmiques d'ASIX dedicades a serveis de xarxa i Internet. Reuneix el desplegament d'un servei DHCP amb Kea, la seva monitorització amb Prometheus i Grafana, la configuració d'alta disponibilitat amb Kea Hot-Standby, un servidor DNS amb BIND9 i la implementació de DNS dinàmic amb DNSSEC.",
+          "A collection of ASIX academic practices on network and Internet services. It covers the deployment of a DHCP service with Kea, its monitoring with Prometheus and Grafana, high availability with Kea Hot-Standby, a DNS server with BIND9, and dynamic DNS with DNSSEC.",
+        ),
+        highlights: l(
+          [
+            "Servicio DHCP con Kea",
+            "Monitorización DHCP con Prometheus y Grafana",
+            "Alta disponibilidad DHCP con Kea Hot-Standby",
+            "Servidor DNS con BIND9",
+            "DNS dinámico y DNSSEC",
+          ],
+          [
+            "Servei DHCP amb Kea",
+            "Monitoratge DHCP amb Prometheus i Grafana",
+            "Alta disponibilitat DHCP amb Kea Hot-Standby",
+            "Servidor DNS amb BIND9",
+            "DNS dinàmic i DNSSEC",
+          ],
+          [
+            "DHCP service with Kea",
+            "DHCP monitoring with Prometheus and Grafana",
+            "DHCP high availability with Kea Hot-Standby",
+            "DNS server with BIND9",
+            "Dynamic DNS and DNSSEC",
+          ],
+        ),
+        stack: [
+          "Kea",
+          "BIND9",
+          "DNS",
+          "DHCP",
+          "Prometheus",
+          "Grafana",
+          "Docker",
+          "Python",
+          "DNSSEC",
+        ],
+        status: null, // Pendiente: confirmar "finalizado" o "documentado".
+        links: {
+          demo: null,
+          repo: "https://github.com/shailamgm/Network-and-Internet-services",
+        },
+        image: null,
+      },
+      {
+        slug: "hospivibe",
+        kind: "proyecto",
+        title: l("HospiVibe", "HospiVibe", "HospiVibe"),
+        summary: l(
+          "Proyecto académico intermodular de ASIX consistente en una aplicación de gestión hospitalaria para administrar información de pacientes, personal médico y servicios del centro. El repositorio incluye la planificación, el diseño de la base de datos relacional, la conectividad y la autenticación, la seguridad, el mantenimiento, la alta disponibilidad, las consultas y la exportación de datos.",
+          "Projecte acadèmic intermodular d'ASIX consistent en una aplicació de gestió hospitalària per administrar informació de pacients, personal mèdic i serveis del centre. El repositori inclou la planificació, el disseny de la base de dades relacional, la connectivitat i l'autenticació, la seguretat, el manteniment, l'alta disponibilitat, les consultes i l'exportació de dades.",
+          "An ASIX cross-module academic project consisting of a hospital management application for handling patient, medical staff and hospital service information. The repository covers project planning, relational database design, database connectivity and authentication, security, maintenance, high availability, queries and data export.",
+        ),
+        highlights: l(
+          [
+            "Planificación del proyecto",
+            "Diseño de la base de datos relacional",
+            "Conectividad y autenticación",
+            "Seguridad y control de acceso",
+            "Mantenimiento de la base de datos",
+            "Alta disponibilidad con replicación",
+            "Consultas a la base de datos",
+            "Exportación de datos",
+          ],
+          [
+            "Planificació del projecte",
+            "Disseny de la base de dades relacional",
+            "Connectivitat i autenticació",
+            "Seguretat i control d'accés",
+            "Manteniment de la base de dades",
+            "Alta disponibilitat amb replicació",
+            "Consultes a la base de dades",
+            "Exportació de dades",
+          ],
+          [
+            "Project planning",
+            "Relational database design",
+            "Database connectivity and authentication",
+            "Security and access control",
+            "Database maintenance",
+            "High availability with replication",
+            "Database queries",
+            "Data export",
+          ],
+        ),
+        stack: [
+          "Python",
+          "PostgreSQL",
+          "CustomTkinter",
+          "bcrypt",
+          "PL/pgSQL",
+          "Power BI",
+          "Shell",
+          "Linux",
+        ],
+        status: null, // Pendiente: confirmar "finalizado" o "documentado".
+        links: {
+          demo: null,
+          repo: "https://github.com/shailamgm/Projecte_intermodular_ASIX_HOSPITAL",
+        },
+        image: null,
+      },
+    ],
+  },
+
+  experience: {
+    intro: null,
+    practice: [
+      {
+        id: "hospital-blanes",
+        organization: l("Hospital Blanes", "Hospital Blanes", "Hospital Blanes"),
+        role: l(
+          "Prácticas de Sistemas y Soporte IT",
+          "Pràctiques de Sistemes i Suport IT",
+          "Systems and IT Support Internship",
+        ),
+        period: l(
+          "Del 25/02/2026 al 20/11/2026",
+          "Del 25/02/2026 al 20/11/2026",
+          "From 25 Feb 2026 to 20 Nov 2026",
+        ),
+        status: "en-curso",
+        description: null,
+        tasks: l(
+          [
+            "Atención y resolución de incidencias técnicas a usuarios",
+            "Gestión y mantenimiento de equipos informáticos",
+            "Soporte en redes y sistemas",
+            "Instalación, configuración y actualización de software",
+          ],
+          [
+            "Atenció i resolució d'incidències tècniques als usuaris",
+            "Gestió i manteniment d'equips informàtics",
+            "Suport en xarxes i sistemes",
+            "Instal·lació, configuració i actualització de programari",
+          ],
+          [
+            "Handling and resolving technical incidents for users",
+            "IT equipment management and maintenance",
+            "Network and systems support",
+            "Software installation, configuration and updates",
+          ],
+        ),
+      },
+      {
+        id: "escola-joaquim-ruyra",
+        organization: l(
+          "Escola Joaquim Ruyra",
+          "Escola Joaquim Ruyra",
+          "Escola Joaquim Ruyra",
+        ),
+        role: l(
+          "Prácticas de soporte técnico",
+          "Pràctiques de suport tècnic",
+          "Technical support internship",
+        ),
+        period: l(
+          "Del 01/10/2024 al 10/03/2025",
+          "Del 01/10/2024 al 10/03/2025",
+          "From 1 Oct 2024 to 10 Mar 2025",
+        ),
+        status: "finalizado",
+        description: null,
+        tasks: l(
+          [
+            "Soporte técnico a alumnos y profesores",
+            "Mantenimiento de equipos",
+            "Resolución de incidencias mediante herramientas digitales",
+          ],
+          [
+            "Suport tècnic a alumnes i professors",
+            "Manteniment d'equips",
+            "Resolució d'incidències mitjançant eines digitals",
+          ],
+          [
+            "Technical support for students and teachers",
+            "Equipment maintenance",
+            "Troubleshooting incidents using digital tools",
+          ],
+        ),
+      },
+    ],
+    education: [
+      {
+        id: "asix",
+        title: l(
+          "Administración de Sistemas Informáticos en Red (ASIX)",
+          "Administració de Sistemes Informàtics en Xarxa (ASIX)",
+          "Network Computer Systems Administration (ASIX)",
+        ),
+        center: "Sa Palomera, Blanes",
+        period: l("Desde 2025", "Des del 2025", "Since 2025"),
+        status: "en-curso",
+      },
+      {
+        id: "smx",
+        title: l(
+          "Sistemas Microinformáticos y Redes (SMX)",
+          "Sistemes Microinformàtics i Xarxes (SMX)",
+          "Microcomputer Systems and Networks (SMX)",
+        ),
+        center: "Sa Palomera, Blanes",
+        period: l("2025", "2025", "2025"),
+        status: "finalizado",
+      },
+    ],
+    certifications: [
+      {
+        id: "word-specialist",
+        name: "Microsoft Office Word Specialist",
+        issuer: "Certiport",
+        year: null,
+      },
+      {
+        id: "aws-cloud-foundations",
+        name: "AWS Academy Graduate – Cloud Foundations",
+        issuer: "AWS Academy",
+        year: null,
+      },
+    ],
+  },
+
+  contact: {
+    intro: null,
+  },
+};
+
+const en: Content = {
+  meta: {
+    title: "Shaila Martínez — Systems and IT Support",
+    description:
+      "Portfolio of Shaila Martínez, an ASIX student with IT support experience in educational and hospital environments.",
+    keywords: [
+      "Shaila Martínez",
+      "ASIX",
+      "systems",
+      "networking",
+      "IT support",
+      "technical support",
+      "Linux",
+      "Windows Server",
+      "Active Directory",
+      "Docker",
+      "AWS Academy",
+      "Cloud Foundations",
+    ],
+  },
+
+  hero: {
+    greeting: "Hi, I'm",
+    roles: ["Systems and IT Support", "Systems administration", "User support"],
+    intro: null,
+  },
+
+  about: {
+    paragraphs: [
+      "I'm a student of Network Computer Systems Administration (ASIX), with previous training in Microcomputer Systems and Networks (SMX). I have experience in IT support in educational and hospital environments, handling incident resolution, equipment maintenance and network and systems support. I'm eager to continue learning and growing professionally in systems administration and IT.",
+    ],
+    facts: [
+      { label: "Focus", value: "Systems and IT Support" },
+      { label: "Languages", value: "Spanish (native) · Catalan (native) · English B1" },
+    ],
+  },
+
+  skills: {
+    intro: null,
+    groups: [
+      {
+        id: "os",
+        title: l("Sistemas operativos", "Sistemes operatius", "Operating systems"),
+        items: ["Linux", "Windows Server"],
+      },
+      {
+        id: "networking",
+        title: l("Redes", "Xarxes", "Networking"),
+        items: ["DNS", "BIND9", "DHCP", "Kea"],
+      },
+      {
+        id: "identity",
+        title: l("Identidad y directorios", "Identitat i directoris", "Identity and directories"),
+        items: ["Active Directory", "LDAP"],
+      },
+      {
+        id: "containers",
+        title: l("Contenedores", "Contenidors", "Containers"),
+        items: ["Docker"],
+      },
+      {
+        id: "automation",
+        title: l("Automatización", "Automatització", "Automation"),
+        items: ["PowerShell"],
+      },
+      {
+        id: "web",
+        title: l("Desarrollo web", "Desenvolupament web", "Web development"),
+        items: ["PHP"],
+      },
+      {
+        id: "security",
+        title: l("Seguridad informática", "Seguretat informàtica", "IT security"),
+        items: [],
+      },
+    ],
+  },
+
+  projects: {
+    intro: "A selection of ASIX academic practices and projects. Each entry links to its public repository, where you can browse the code and documentation.",
+    items: [
+      {
+        slug: "servicios-red-internet",
+        kind: "practica",
+        title: l(
+          "Servicios de red e Internet",
+          "Serveis de xarxa i Internet",
+          "Network and Internet Services",
+        ),
+        summary: l(
+          "Colección de prácticas académicas de ASIX dedicadas a servicios de red e Internet. Reúne el despliegue de un servicio DHCP con Kea, su monitorización con Prometheus y Grafana, la configuración de alta disponibilidad con Kea Hot-Standby, un servidor DNS con BIND9 y la implementación de DNS dinámico con DNSSEC.",
+          "Col·lecció de pràctiques acadèmiques d'ASIX dedicades a serveis de xarxa i Internet. Reuneix el desplegament d'un servei DHCP amb Kea, la seva monitorització amb Prometheus i Grafana, la configuració d'alta disponibilitat amb Kea Hot-Standby, un servidor DNS amb BIND9 i la implementació de DNS dinàmic amb DNSSEC.",
+          "A collection of ASIX academic practices on network and Internet services. It covers the deployment of a DHCP service with Kea, its monitoring with Prometheus and Grafana, high availability with Kea Hot-Standby, a DNS server with BIND9, and dynamic DNS with DNSSEC.",
+        ),
+        highlights: l(
+          [
+            "Servicio DHCP con Kea",
+            "Monitorización DHCP con Prometheus y Grafana",
+            "Alta disponibilidad DHCP con Kea Hot-Standby",
+            "Servidor DNS con BIND9",
+            "DNS dinámico y DNSSEC",
+          ],
+          [
+            "Servei DHCP amb Kea",
+            "Monitoratge DHCP amb Prometheus i Grafana",
+            "Alta disponibilitat DHCP amb Kea Hot-Standby",
+            "Servidor DNS amb BIND9",
+            "DNS dinàmic i DNSSEC",
+          ],
+          [
+            "DHCP service with Kea",
+            "DHCP monitoring with Prometheus and Grafana",
+            "DHCP high availability with Kea Hot-Standby",
+            "DNS server with BIND9",
+            "Dynamic DNS and DNSSEC",
+          ],
+        ),
+        stack: [
+          "Kea",
+          "BIND9",
+          "DNS",
+          "DHCP",
+          "Prometheus",
+          "Grafana",
+          "Docker",
+          "Python",
+          "DNSSEC",
+        ],
+        status: null, // Pendiente: confirmar "finalizado" o "documentado".
+        links: {
+          demo: null,
+          repo: "https://github.com/shailamgm/Network-and-Internet-services",
+        },
+        image: null,
+      },
+      {
+        slug: "hospivibe",
+        kind: "proyecto",
+        title: l("HospiVibe", "HospiVibe", "HospiVibe"),
+        summary: l(
+          "Proyecto académico intermodular de ASIX consistente en una aplicación de gestión hospitalaria para administrar información de pacientes, personal médico y servicios del centro. El repositorio incluye la planificación, el diseño de la base de datos relacional, la conectividad y la autenticación, la seguridad, el mantenimiento, la alta disponibilidad, las consultas y la exportación de datos.",
+          "Projecte acadèmic intermodular d'ASIX consistent en una aplicació de gestió hospitalària per administrar informació de pacients, personal mèdic i serveis del centre. El repositori inclou la planificació, el disseny de la base de dades relacional, la connectivitat i l'autenticació, la seguretat, el manteniment, l'alta disponibilitat, les consultes i l'exportació de dades.",
+          "An ASIX cross-module academic project consisting of a hospital management application for handling patient, medical staff and hospital service information. The repository covers project planning, relational database design, database connectivity and authentication, security, maintenance, high availability, queries and data export.",
+        ),
+        highlights: l(
+          [
+            "Planificación del proyecto",
+            "Diseño de la base de datos relacional",
+            "Conectividad y autenticación",
+            "Seguridad y control de acceso",
+            "Mantenimiento de la base de datos",
+            "Alta disponibilidad con replicación",
+            "Consultas a la base de datos",
+            "Exportación de datos",
+          ],
+          [
+            "Planificació del projecte",
+            "Disseny de la base de dades relacional",
+            "Connectivitat i autenticació",
+            "Seguretat i control d'accés",
+            "Manteniment de la base de dades",
+            "Alta disponibilitat amb replicació",
+            "Consultes a la base de dades",
+            "Exportació de dades",
+          ],
+          [
+            "Project planning",
+            "Relational database design",
+            "Database connectivity and authentication",
+            "Security and access control",
+            "Database maintenance",
+            "High availability with replication",
+            "Database queries",
+            "Data export",
+          ],
+        ),
+        stack: [
+          "Python",
+          "PostgreSQL",
+          "CustomTkinter",
+          "bcrypt",
+          "PL/pgSQL",
+          "Power BI",
+          "Shell",
+          "Linux",
+        ],
+        status: null, // Pendiente: confirmar "finalizado" o "documentado".
+        links: {
+          demo: null,
+          repo: "https://github.com/shailamgm/Projecte_intermodular_ASIX_HOSPITAL",
+        },
+        image: null,
+      },
+    ],
+  },
+
+  experience: {
+    intro: null,
+    practice: [
+      {
+        id: "hospital-blanes",
+        organization: l("Hospital Blanes", "Hospital Blanes", "Hospital Blanes"),
+        role: l(
+          "Prácticas de Sistemas y Soporte IT",
+          "Pràctiques de Sistemes i Suport IT",
+          "Systems and IT Support Internship",
+        ),
+        period: l(
+          "Del 25/02/2026 al 20/11/2026",
+          "Del 25/02/2026 al 20/11/2026",
+          "From 25 Feb 2026 to 20 Nov 2026",
+        ),
+        status: "en-curso",
+        description: null,
+        tasks: l(
+          [
+            "Atención y resolución de incidencias técnicas a usuarios",
+            "Gestión y mantenimiento de equipos informáticos",
+            "Soporte en redes y sistemas",
+            "Instalación, configuración y actualización de software",
+          ],
+          [
+            "Atenció i resolució d'incidències tècniques als usuaris",
+            "Gestió i manteniment d'equips informàtics",
+            "Suport en xarxes i sistemes",
+            "Instal·lació, configuració i actualització de programari",
+          ],
+          [
+            "Handling and resolving technical incidents for users",
+            "IT equipment management and maintenance",
+            "Network and systems support",
+            "Software installation, configuration and updates",
+          ],
+        ),
+      },
+      {
+        id: "escola-joaquim-ruyra",
+        organization: l(
+          "Escola Joaquim Ruyra",
+          "Escola Joaquim Ruyra",
+          "Escola Joaquim Ruyra",
+        ),
+        role: l(
+          "Prácticas de soporte técnico",
+          "Pràctiques de suport tècnic",
+          "Technical support internship",
+        ),
+        period: l(
+          "Del 01/10/2024 al 10/03/2025",
+          "Del 01/10/2024 al 10/03/2025",
+          "From 1 Oct 2024 to 10 Mar 2025",
+        ),
+        status: "finalizado",
+        description: null,
+        tasks: l(
+          [
+            "Soporte técnico a alumnos y profesores",
+            "Mantenimiento de equipos",
+            "Resolución de incidencias mediante herramientas digitales",
+          ],
+          [
+            "Suport tècnic a alumnes i professors",
+            "Manteniment d'equips",
+            "Resolució d'incidències mitjançant eines digitals",
+          ],
+          [
+            "Technical support for students and teachers",
+            "Equipment maintenance",
+            "Troubleshooting incidents using digital tools",
+          ],
+        ),
+      },
+    ],
+    education: [
+      {
+        id: "asix",
+        title: l(
+          "Administración de Sistemas Informáticos en Red (ASIX)",
+          "Administració de Sistemes Informàtics en Xarxa (ASIX)",
+          "Network Computer Systems Administration (ASIX)",
+        ),
+        center: "Sa Palomera, Blanes",
+        period: l("Desde 2025", "Des del 2025", "Since 2025"),
+        status: "en-curso",
+      },
+      {
+        id: "smx",
+        title: l(
+          "Sistemas Microinformáticos y Redes (SMX)",
+          "Sistemes Microinformàtics i Xarxes (SMX)",
+          "Microcomputer Systems and Networks (SMX)",
+        ),
+        center: "Sa Palomera, Blanes",
+        period: l("2025", "2025", "2025"),
+        status: "finalizado",
+      },
+    ],
+    certifications: [
+      {
+        id: "word-specialist",
+        name: "Microsoft Office Word Specialist",
+        issuer: "Certiport",
+        year: null,
+      },
+      {
+        id: "aws-cloud-foundations",
+        name: "AWS Academy Graduate – Cloud Foundations",
+        issuer: "AWS Academy",
+        year: null,
+      },
+    ],
+  },
+
+  contact: {
+    intro: null,
+  },
+};
+
+export const content: Record<Locale, Content> = { es, ca, en };
+
+export const getContent = (locale: Locale): Content => content[locale];

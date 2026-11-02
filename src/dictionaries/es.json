@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "skills": "Conocimientos",
+    "projects": "Proyectos",
+    "experience": "Experiencia y formación",
+    "contact": "Contacto",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "changeLanguage": "Cambiar idioma"
+  },
+  "hero": {
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Contacto",
+    "scroll": "Desliza para ver más"
+  },
+  "sections": {
+    "about": "Sobre mí",
+    "skills": "Conocimientos",
+    "projects": "Proyectos",
+    "experience": "Experiencia y formación",
+    "contact": "Contacto"
+  },
+  "projects": {
+    "kindProyecto": "Proyecto académico",
+    "kindPractica": "Práctica académica",
+    "statusInProgress": "En curso",
+    "statusDone": "Finalizado",
+    "statusDocumented": "Documentado",
+    "viewDemo": "Ver demo",
+    "viewRepo": "Ver código",
+    "noLinks": "Sin enlaces disponibles"
+  },
+  "experience": {
+    "practice": "Prácticas",
+    "education": "Formación",
+    "certifications": "Certificaciones",
+    "inProgress": "En curso",
+    "completed": "Finalizado"
+  },
+  "contact": {
+    "formTitle": "Escríbeme",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "submit": "Enviar mensaje",
+    "disabledNotice": "El formulario todavía no está disponible. Mientras tanto, puedes escribirme por correo o contactar conmigo en LinkedIn.",
+    "copyEmail": "Copiar correo",
+    "copied": "¡Copiado!",
+    "emailUnavailable": "Correo no disponible"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "builtWith": "Hecho con Next.js y Tailwind CSS"
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido",
+    "externalLink": "Se abre en una pestaña nueva",
+    "languageCurrent": "Idioma actual"
+  },
+  "common": {
+    "pending": "No disponible"
+  }
+}

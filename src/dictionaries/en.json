@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "about": "About me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience and education",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "changeLanguage": "Change language"
+  },
+  "hero": {
+    "ctaProjects": "View projects",
+    "ctaContact": "Contact",
+    "scroll": "Scroll to see more"
+  },
+  "sections": {
+    "about": "About me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience and education",
+    "contact": "Contact"
+  },
+  "projects": {
+    "kindProyecto": "Academic project",
+    "kindPractica": "Academic practice",
+    "statusInProgress": "In progress",
+    "statusDone": "Completed",
+    "statusDocumented": "Documented",
+    "viewDemo": "View demo",
+    "viewRepo": "View code",
+    "noLinks": "No links available"
+  },
+  "experience": {
+    "practice": "Internships",
+    "education": "Education",
+    "certifications": "Certifications",
+    "inProgress": "In progress",
+    "completed": "Completed"
+  },
+  "contact": {
+    "formTitle": "Get in touch",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send message",
+    "disabledNotice": "The form isn't available yet. In the meantime, you can email me or reach me on LinkedIn.",
+    "copyEmail": "Copy email",
+    "copied": "Copied!",
+    "emailUnavailable": "Email unavailable"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js and Tailwind CSS"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "externalLink": "Opens in a new tab",
+    "languageCurrent": "Current language"
+  },
+  "common": {
+    "pending": "Not available"
+  }
+}

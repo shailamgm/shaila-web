@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "about": "Sobre mi",
+    "skills": "Coneixements",
+    "projects": "Projectes",
+    "experience": "Experiència i formació",
+    "contact": "Contacte",
+    "openMenu": "Obre el menú",
+    "closeMenu": "Tanca el menú",
+    "changeLanguage": "Canvia la llengua"
+  },
+  "hero": {
+    "ctaProjects": "Veure projectes",
+    "ctaContact": "Contacte",
+    "scroll": "Desplaça't per veure més"
+  },
+  "sections": {
+    "about": "Sobre mi",
+    "skills": "Coneixements",
+    "projects": "Projectes",
+    "experience": "Experiència i formació",
+    "contact": "Contacte"
+  },
+  "projects": {
+    "kindProyecto": "Projecte acadèmic",
+    "kindPractica": "Pràctica acadèmica",
+    "statusInProgress": "En curs",
+    "statusDone": "Finalitzat",
+    "statusDocumented": "Documentat",
+    "viewDemo": "Veure la demo",
+    "viewRepo": "Veure el codi",
+    "noLinks": "Sense enllaços disponibles"
+  },
+  "experience": {
+    "practice": "Pràctiques",
+    "education": "Formació",
+    "certifications": "Certificacions",
+    "inProgress": "En curs",
+    "completed": "Finalitzat"
+  },
+  "contact": {
+    "formTitle": "Escriu-me",
+    "name": "Nom",
+    "email": "Correu electrònic",
+    "message": "Missatge",
+    "submit": "Envia el missatge",
+    "disabledNotice": "El formulari encara no està disponible. Mentrestant, pots escriure'm per correu o contactar amb mi a LinkedIn.",
+    "copyEmail": "Copia el correu",
+    "copied": "Copiat!",
+    "emailUnavailable": "Correu no disponible"
+  },
+  "footer": {
+    "rights": "Tots els drets reservats.",
+    "builtWith": "Fet amb Next.js i Tailwind CSS"
+  },
+  "a11y": {
+    "skipToContent": "Salta al contingut",
+    "externalLink": "S'obre en una pestanya nova",
+    "languageCurrent": "Idioma actual"
+  },
+  "common": {
+    "pending": "No disponible"
+  }
+}
