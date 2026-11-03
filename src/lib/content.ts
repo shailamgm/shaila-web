@@ -7,10 +7,10 @@ const es: Content = {
   meta: {
     title: "Shaila Martínez — Sistemas y Soporte IT",
     description:
-      "Portafolio de Shaila Martínez, estudiante de ASIX con experiencia en soporte informático en entornos educativos y hospitalarios.",
+      "Portafolio de Shaila Martínez, técnica en Administración de Sistemas y Soporte IT cursando ASIR, con experiencia en soporte informático en entornos educativos y hospitalarios.",
     keywords: [
       "Shaila Martínez",
-      "ASIX",
+      "ASIR",
       "sistemas",
       "redes",
       "soporte IT",
@@ -32,13 +32,14 @@ const es: Content = {
   },
 
   about: {
-    // Biografía aprobada por Shaila (sin cambios).
+    // Biografía alineada con el CV (perfil de técnica, ASIR y carnet B).
     paragraphs: [
-      "Soy estudiante de Administración de Sistemas Informáticos en Red (ASIX), con formación previa en Sistemas Microinformáticos y Redes (SMX). Tengo experiencia en soporte informático en entornos educativos y hospitalarios, realizando tareas de resolución de incidencias, mantenimiento de equipos y soporte de redes y sistemas. Me interesa seguir aprendiendo y desarrollándome profesionalmente en el ámbito de la administración de sistemas y las tecnologías IT.",
+      "Técnica en Administración de Sistemas y Soporte IT, cursando el Grado Superior en Administración de Sistemas Informáticos en Red (ASIR). Tengo formación previa en Sistemas Microinformáticos y Redes (SMX) y experiencia en soporte informático en entornos educativos y hospitalarios, realizando tareas de resolución de incidencias, mantenimiento de equipos y soporte de redes y sistemas. Me interesa seguir aprendiendo y desarrollándome profesionalmente en el ámbito de la administración de sistemas y las tecnologías IT.",
     ],
     facts: [
       { label: "Enfoque", value: "Sistemas y Soporte IT" },
       { label: "Idiomas", value: "Español nativo · Catalán nativo · Inglés B1" },
+      { label: "Carnet de conducir", value: "B" },
     ],
   },
 
@@ -81,11 +82,22 @@ const es: Content = {
         title: l("Seguridad informática", "Seguretat informàtica", "IT security"),
         items: [], // TODO: herramientas concretas, sin inventar.
       },
+      {
+        id: "soft-skills",
+        title: l("Competencias", "Competències", "Soft skills"),
+        items: [
+          "Trabajo en equipo",
+          "Organización y puntualidad",
+          "Responsabilidad",
+          "Autoaprendizaje",
+          "Resolución de problemas",
+        ],
+      },
     ],
   },
 
   projects: {
-    intro: "Selección de prácticas y proyectos académicos de ASIX. Cada ficha enlaza a su repositorio público, donde puedes consultar el código y la documentación.",
+    intro: "Selección de prácticas y proyectos académicos de ASIR. Cada ficha enlaza a su repositorio público, donde puedes consultar el código y la documentación.",
     items: [
       {
         slug: "servicios-red-internet",
@@ -96,9 +108,9 @@ const es: Content = {
           "Network and Internet Services",
         ),
         summary: l(
-          "Colección de prácticas académicas de ASIX dedicadas a servicios de red e Internet. Reúne el despliegue de un servicio DHCP con Kea, su monitorización con Prometheus y Grafana, la configuración de alta disponibilidad con Kea Hot-Standby, un servidor DNS con BIND9 y la implementación de DNS dinámico con DNSSEC.",
+          "Colección de prácticas académicas de ASIR dedicadas a servicios de red e Internet. Reúne el despliegue de un servicio DHCP con Kea, su monitorización con Prometheus y Grafana, la configuración de alta disponibilidad con Kea Hot-Standby, un servidor DNS con BIND9 y la implementación de DNS dinámico con DNSSEC.",
           "Col·lecció de pràctiques acadèmiques d'ASIX dedicades a serveis de xarxa i Internet. Reuneix el desplegament d'un servei DHCP amb Kea, la seva monitorització amb Prometheus i Grafana, la configuració d'alta disponibilitat amb Kea Hot-Standby, un servidor DNS amb BIND9 i la implementació de DNS dinàmic amb DNSSEC.",
-          "A collection of ASIX academic practices on network and Internet services. It covers the deployment of a DHCP service with Kea, its monitoring with Prometheus and Grafana, high availability with Kea Hot-Standby, a DNS server with BIND9, and dynamic DNS with DNSSEC.",
+          "A collection of ASIR academic practices on network and Internet services. It covers the deployment of a DHCP service with Kea, its monitoring with Prometheus and Grafana, high availability with Kea Hot-Standby, a DNS server with BIND9, and dynamic DNS with DNSSEC.",
         ),
         highlights: l(
           [
@@ -146,9 +158,9 @@ const es: Content = {
         kind: "proyecto",
         title: l("HospiVibe", "HospiVibe", "HospiVibe"),
         summary: l(
-          "Proyecto académico intermodular de ASIX consistente en una aplicación de gestión hospitalaria para administrar información de pacientes, personal médico y servicios del centro. El repositorio incluye la planificación, el diseño de la base de datos relacional, la conectividad y la autenticación, la seguridad, el mantenimiento, la alta disponibilidad, las consultas y la exportación de datos.",
+          "Proyecto académico intermodular de ASIR consistente en una aplicación de gestión hospitalaria para administrar información de pacientes, personal médico y servicios del centro. El repositorio incluye la planificación, el diseño de la base de datos relacional, la conectividad y la autenticación, la seguridad, el mantenimiento, la alta disponibilidad, las consultas y la exportación de datos.",
           "Projecte acadèmic intermodular d'ASIX consistent en una aplicació de gestió hospitalària per administrar informació de pacients, personal mèdic i serveis del centre. El repositori inclou la planificació, el disseny de la base de dades relacional, la connectivitat i l'autenticació, la seguretat, el manteniment, l'alta disponibilitat, les consultes i l'exportació de dades.",
-          "An ASIX cross-module academic project consisting of a hospital management application for handling patient, medical staff and hospital service information. The repository covers project planning, relational database design, database connectivity and authentication, security, maintenance, high availability, queries and data export.",
+          "An ASIR cross-module academic project consisting of a hospital management application for handling patient, medical staff and hospital service information. The repository covers project planning, relational database design, database connectivity and authentication, security, maintenance, high availability, queries and data export.",
         ),
         highlights: l(
           [
@@ -214,9 +226,9 @@ const es: Content = {
           "Systems and IT Support Internship",
         ),
         period: l(
-          "Del 25/02/2026 al 20/11/2026",
-          "Del 25/02/2026 al 20/11/2026",
-          "From 25 Feb 2026 to 20 Nov 2026",
+          "Del 25/02/2026 a la actualidad",
+          "Del 25/02/2026 a l'actualitat",
+          "From 25 Feb 2026 to present",
         ),
         status: "en-curso",
         description: null, // TODO
@@ -283,12 +295,12 @@ const es: Content = {
       {
         id: "asix",
         title: l(
-          "Administración de Sistemas Informáticos en Red (ASIX)",
+          "Administración de Sistemas Informáticos en Red (ASIR)",
           "Administració de Sistemes Informàtics en Xarxa (ASIX)",
-          "Network Computer Systems Administration (ASIX)",
+          "Network Computer Systems Administration (ASIR)",
         ),
         center: "Sa Palomera, Blanes",
-        period: l("Desde 2025", "Des del 2025", "Since 2025"),
+        period: l("Desde el 12/09/2025", "Des del 12/09/2025", "Since 12 Sep 2025"),
         status: "en-curso",
       },
       {
@@ -299,7 +311,11 @@ const es: Content = {
           "Microcomputer Systems and Networks (SMX)",
         ),
         center: "Sa Palomera, Blanes",
-        period: l("2025", "2025", "2025"),
+        period: l(
+          "Del 07/09/2023 al 30/05/2025",
+          "Del 07/09/2023 al 30/05/2025",
+          "From 7 Sep 2023 to 30 May 2025",
+        ),
         status: "finalizado",
       },
     ],
@@ -328,7 +344,7 @@ const ca: Content = {
   meta: {
     title: "Shaila Martínez — Sistemes i Suport IT",
     description:
-      "Portafolis de Shaila Martínez, estudiant d'ASIX amb experiència en suport informàtic en entorns educatius i hospitalaris.",
+      "Portafolis de Shaila Martínez, tècnica en Administració de Sistemes i Suport IT cursant ASIX, amb experiència en suport informàtic en entorns educatius i hospitalaris.",
     keywords: [
       "Shaila Martínez",
       "ASIX",
@@ -353,11 +369,12 @@ const ca: Content = {
 
   about: {
     paragraphs: [
-      "Sóc estudiant d'Administració de Sistemes Informàtics en Xarxa (ASIX), amb formació prèvia en Sistemes Microinformàtics i Xarxes (SMX). Tinc experiència en suport informàtic en entorns educatius i hospitalaris, duent a terme tasques de resolució d'incidències, manteniment d'equips i suport de xarxes i sistemes. M'interessa continuar aprenent i desenvolupant-me professionalment en l'àmbit de l'administració de sistemes i les tecnologies IT.",
+      "Tècnica en Administració de Sistemes i Suport IT, cursant el Grau Superior en Administració de Sistemes Informàtics en Xarxa (ASIX). Tinc formació prèvia en Sistemes Microinformàtics i Xarxes (SMX) i experiència en suport informàtic en entorns educatius i hospitalaris, duent a terme tasques de resolució d'incidències, manteniment d'equips i suport de xarxes i sistemes. M'interessa continuar aprenent i desenvolupant-me professionalment en l'àmbit de l'administració de sistemes i les tecnologies IT.",
     ],
     facts: [
       { label: "Enfocament", value: "Sistemes i Suport IT" },
       { label: "Idiomes", value: "Espanyol natiu · Català natiu · Anglès B1" },
+      { label: "Carnet de conduir", value: "B" },
     ],
   },
 
@@ -399,6 +416,17 @@ const ca: Content = {
         title: l("Seguridad informática", "Seguretat informàtica", "IT security"),
         items: [],
       },
+      {
+        id: "soft-skills",
+        title: l("Competencias", "Competències", "Soft skills"),
+        items: [
+          "Treball en equip",
+          "Organització i puntualitat",
+          "Responsabilitat",
+          "Autoaprenentatge",
+          "Resolució de problemes",
+        ],
+      },
     ],
   },
 
@@ -414,9 +442,9 @@ const ca: Content = {
           "Network and Internet Services",
         ),
         summary: l(
-          "Colección de prácticas académicas de ASIX dedicadas a servicios de red e Internet. Reúne el despliegue de un servicio DHCP con Kea, su monitorización con Prometheus y Grafana, la configuración de alta disponibilidad con Kea Hot-Standby, un servidor DNS con BIND9 y la implementación de DNS dinámico con DNSSEC.",
+          "Colección de prácticas académicas de ASIR dedicadas a servicios de red e Internet. Reúne el despliegue de un servicio DHCP con Kea, su monitorización con Prometheus y Grafana, la configuración de alta disponibilidad con Kea Hot-Standby, un servidor DNS con BIND9 y la implementación de DNS dinámico con DNSSEC.",
           "Col·lecció de pràctiques acadèmiques d'ASIX dedicades a serveis de xarxa i Internet. Reuneix el desplegament d'un servei DHCP amb Kea, la seva monitorització amb Prometheus i Grafana, la configuració d'alta disponibilitat amb Kea Hot-Standby, un servidor DNS amb BIND9 i la implementació de DNS dinàmic amb DNSSEC.",
-          "A collection of ASIX academic practices on network and Internet services. It covers the deployment of a DHCP service with Kea, its monitoring with Prometheus and Grafana, high availability with Kea Hot-Standby, a DNS server with BIND9, and dynamic DNS with DNSSEC.",
+          "A collection of ASIR academic practices on network and Internet services. It covers the deployment of a DHCP service with Kea, its monitoring with Prometheus and Grafana, high availability with Kea Hot-Standby, a DNS server with BIND9, and dynamic DNS with DNSSEC.",
         ),
         highlights: l(
           [
@@ -464,9 +492,9 @@ const ca: Content = {
         kind: "proyecto",
         title: l("HospiVibe", "HospiVibe", "HospiVibe"),
         summary: l(
-          "Proyecto académico intermodular de ASIX consistente en una aplicación de gestión hospitalaria para administrar información de pacientes, personal médico y servicios del centro. El repositorio incluye la planificación, el diseño de la base de datos relacional, la conectividad y la autenticación, la seguridad, el mantenimiento, la alta disponibilidad, las consultas y la exportación de datos.",
+          "Proyecto académico intermodular de ASIR consistente en una aplicación de gestión hospitalaria para administrar información de pacientes, personal médico y servicios del centro. El repositorio incluye la planificación, el diseño de la base de datos relacional, la conectividad y la autenticación, la seguridad, el mantenimiento, la alta disponibilidad, las consultas y la exportación de datos.",
           "Projecte acadèmic intermodular d'ASIX consistent en una aplicació de gestió hospitalària per administrar informació de pacients, personal mèdic i serveis del centre. El repositori inclou la planificació, el disseny de la base de dades relacional, la connectivitat i l'autenticació, la seguretat, el manteniment, l'alta disponibilitat, les consultes i l'exportació de dades.",
-          "An ASIX cross-module academic project consisting of a hospital management application for handling patient, medical staff and hospital service information. The repository covers project planning, relational database design, database connectivity and authentication, security, maintenance, high availability, queries and data export.",
+          "An ASIR cross-module academic project consisting of a hospital management application for handling patient, medical staff and hospital service information. The repository covers project planning, relational database design, database connectivity and authentication, security, maintenance, high availability, queries and data export.",
         ),
         highlights: l(
           [
@@ -532,9 +560,9 @@ const ca: Content = {
           "Systems and IT Support Internship",
         ),
         period: l(
-          "Del 25/02/2026 al 20/11/2026",
-          "Del 25/02/2026 al 20/11/2026",
-          "From 25 Feb 2026 to 20 Nov 2026",
+          "Del 25/02/2026 a la actualidad",
+          "Del 25/02/2026 a l'actualitat",
+          "From 25 Feb 2026 to present",
         ),
         status: "en-curso",
         description: null,
@@ -601,12 +629,12 @@ const ca: Content = {
       {
         id: "asix",
         title: l(
-          "Administración de Sistemas Informáticos en Red (ASIX)",
+          "Administración de Sistemas Informáticos en Red (ASIR)",
           "Administració de Sistemes Informàtics en Xarxa (ASIX)",
-          "Network Computer Systems Administration (ASIX)",
+          "Network Computer Systems Administration (ASIR)",
         ),
         center: "Sa Palomera, Blanes",
-        period: l("Desde 2025", "Des del 2025", "Since 2025"),
+        period: l("Desde el 12/09/2025", "Des del 12/09/2025", "Since 12 Sep 2025"),
         status: "en-curso",
       },
       {
@@ -617,7 +645,11 @@ const ca: Content = {
           "Microcomputer Systems and Networks (SMX)",
         ),
         center: "Sa Palomera, Blanes",
-        period: l("2025", "2025", "2025"),
+        period: l(
+          "Del 07/09/2023 al 30/05/2025",
+          "Del 07/09/2023 al 30/05/2025",
+          "From 7 Sep 2023 to 30 May 2025",
+        ),
         status: "finalizado",
       },
     ],
@@ -646,10 +678,10 @@ const en: Content = {
   meta: {
     title: "Shaila Martínez — Systems and IT Support",
     description:
-      "Portfolio of Shaila Martínez, an ASIX student with IT support experience in educational and hospital environments.",
+      "Portfolio of Shaila Martínez, a Systems Administration and IT Support technician currently studying ASIR, with IT support experience in educational and hospital environments.",
     keywords: [
       "Shaila Martínez",
-      "ASIX",
+      "ASIR",
       "systems",
       "networking",
       "IT support",
@@ -671,11 +703,12 @@ const en: Content = {
 
   about: {
     paragraphs: [
-      "I'm a student of Network Computer Systems Administration (ASIX), with previous training in Microcomputer Systems and Networks (SMX). I have experience in IT support in educational and hospital environments, handling incident resolution, equipment maintenance and network and systems support. I'm eager to continue learning and growing professionally in systems administration and IT.",
+      "I'm a Systems Administration and IT Support technician, currently studying the Advanced Vocational Degree in Network Computer Systems Administration (ASIR). I have previous training in Microcomputer Systems and Networks (SMX) and experience in IT support in educational and hospital environments, handling incident resolution, equipment maintenance and network and systems support. I'm eager to continue learning and growing professionally in systems administration and IT.",
     ],
     facts: [
       { label: "Focus", value: "Systems and IT Support" },
       { label: "Languages", value: "Spanish (native) · Catalan (native) · English B1" },
+      { label: "Driving licence", value: "B" },
     ],
   },
 
@@ -717,11 +750,22 @@ const en: Content = {
         title: l("Seguridad informática", "Seguretat informàtica", "IT security"),
         items: [],
       },
+      {
+        id: "soft-skills",
+        title: l("Competencias", "Competències", "Soft skills"),
+        items: [
+          "Teamwork",
+          "Organization and punctuality",
+          "Responsibility",
+          "Self-learning",
+          "Problem solving",
+        ],
+      },
     ],
   },
 
   projects: {
-    intro: "A selection of ASIX academic practices and projects. Each entry links to its public repository, where you can browse the code and documentation.",
+    intro: "A selection of ASIR academic practices and projects. Each entry links to its public repository, where you can browse the code and documentation.",
     items: [
       {
         slug: "servicios-red-internet",
@@ -732,9 +776,9 @@ const en: Content = {
           "Network and Internet Services",
         ),
         summary: l(
-          "Colección de prácticas académicas de ASIX dedicadas a servicios de red e Internet. Reúne el despliegue de un servicio DHCP con Kea, su monitorización con Prometheus y Grafana, la configuración de alta disponibilidad con Kea Hot-Standby, un servidor DNS con BIND9 y la implementación de DNS dinámico con DNSSEC.",
+          "Colección de prácticas académicas de ASIR dedicadas a servicios de red e Internet. Reúne el despliegue de un servicio DHCP con Kea, su monitorización con Prometheus y Grafana, la configuración de alta disponibilidad con Kea Hot-Standby, un servidor DNS con BIND9 y la implementación de DNS dinámico con DNSSEC.",
           "Col·lecció de pràctiques acadèmiques d'ASIX dedicades a serveis de xarxa i Internet. Reuneix el desplegament d'un servei DHCP amb Kea, la seva monitorització amb Prometheus i Grafana, la configuració d'alta disponibilitat amb Kea Hot-Standby, un servidor DNS amb BIND9 i la implementació de DNS dinàmic amb DNSSEC.",
-          "A collection of ASIX academic practices on network and Internet services. It covers the deployment of a DHCP service with Kea, its monitoring with Prometheus and Grafana, high availability with Kea Hot-Standby, a DNS server with BIND9, and dynamic DNS with DNSSEC.",
+          "A collection of ASIR academic practices on network and Internet services. It covers the deployment of a DHCP service with Kea, its monitoring with Prometheus and Grafana, high availability with Kea Hot-Standby, a DNS server with BIND9, and dynamic DNS with DNSSEC.",
         ),
         highlights: l(
           [
@@ -782,9 +826,9 @@ const en: Content = {
         kind: "proyecto",
         title: l("HospiVibe", "HospiVibe", "HospiVibe"),
         summary: l(
-          "Proyecto académico intermodular de ASIX consistente en una aplicación de gestión hospitalaria para administrar información de pacientes, personal médico y servicios del centro. El repositorio incluye la planificación, el diseño de la base de datos relacional, la conectividad y la autenticación, la seguridad, el mantenimiento, la alta disponibilidad, las consultas y la exportación de datos.",
+          "Proyecto académico intermodular de ASIR consistente en una aplicación de gestión hospitalaria para administrar información de pacientes, personal médico y servicios del centro. El repositorio incluye la planificación, el diseño de la base de datos relacional, la conectividad y la autenticación, la seguridad, el mantenimiento, la alta disponibilidad, las consultas y la exportación de datos.",
           "Projecte acadèmic intermodular d'ASIX consistent en una aplicació de gestió hospitalària per administrar informació de pacients, personal mèdic i serveis del centre. El repositori inclou la planificació, el disseny de la base de dades relacional, la connectivitat i l'autenticació, la seguretat, el manteniment, l'alta disponibilitat, les consultes i l'exportació de dades.",
-          "An ASIX cross-module academic project consisting of a hospital management application for handling patient, medical staff and hospital service information. The repository covers project planning, relational database design, database connectivity and authentication, security, maintenance, high availability, queries and data export.",
+          "An ASIR cross-module academic project consisting of a hospital management application for handling patient, medical staff and hospital service information. The repository covers project planning, relational database design, database connectivity and authentication, security, maintenance, high availability, queries and data export.",
         ),
         highlights: l(
           [
@@ -850,9 +894,9 @@ const en: Content = {
           "Systems and IT Support Internship",
         ),
         period: l(
-          "Del 25/02/2026 al 20/11/2026",
-          "Del 25/02/2026 al 20/11/2026",
-          "From 25 Feb 2026 to 20 Nov 2026",
+          "Del 25/02/2026 a la actualidad",
+          "Del 25/02/2026 a l'actualitat",
+          "From 25 Feb 2026 to present",
         ),
         status: "en-curso",
         description: null,
@@ -919,12 +963,12 @@ const en: Content = {
       {
         id: "asix",
         title: l(
-          "Administración de Sistemas Informáticos en Red (ASIX)",
+          "Administración de Sistemas Informáticos en Red (ASIR)",
           "Administració de Sistemes Informàtics en Xarxa (ASIX)",
-          "Network Computer Systems Administration (ASIX)",
+          "Network Computer Systems Administration (ASIR)",
         ),
         center: "Sa Palomera, Blanes",
-        period: l("Desde 2025", "Des del 2025", "Since 2025"),
+        period: l("Desde el 12/09/2025", "Des del 12/09/2025", "Since 12 Sep 2025"),
         status: "en-curso",
       },
       {
@@ -935,7 +979,11 @@ const en: Content = {
           "Microcomputer Systems and Networks (SMX)",
         ),
         center: "Sa Palomera, Blanes",
-        period: l("2025", "2025", "2025"),
+        period: l(
+          "Del 07/09/2023 al 30/05/2025",
+          "Del 07/09/2023 al 30/05/2025",
+          "From 7 Sep 2023 to 30 May 2025",
+        ),
         status: "finalizado",
       },
     ],
