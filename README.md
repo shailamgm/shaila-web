@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio personal — Shaila Martínez
 
-## Getting Started
+Portfolio web personal desarrollado para presentar mi perfil profesional, formación, experiencia, conocimientos técnicos y proyectos.
 
-First, run the development server:
+El proyecto está diseñado como una web moderna, responsive y accesible, con soporte para varios idiomas y modo claro y oscuro.
+
+## Tecnologías utilizadas
+
+- **Next.js** — Framework de React.
+- **React** — Desarrollo de la interfaz.
+- **TypeScript** — Tipado estático.
+- **Tailwind CSS** — Estilos y diseño responsive.
+- **CSS** — Personalización visual y animaciones.
+- **Formspree** — Gestión del formulario de contacto.
+
+## Características
+
+- Diseño responsive adaptado a escritorio, tablet y móvil.
+- Interfaz disponible en español, catalán e inglés.
+- Modo claro y oscuro.
+- Secciones de presentación, sobre mí, habilidades, proyectos y experiencia.
+- Formulario de contacto funcional.
+- Enlaces a GitHub y LinkedIn.
+- Visualización y descarga del currículum en PDF.
+- Animaciones sutiles y soporte para preferencias de movimiento reducido.
+- Buenas prácticas de accesibilidad y posicionamiento SEO.
+
+## Instalación y ejecución local
+
+### Requisitos
+
+- Node.js
+- npm
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/shailamgm/shaila-web.git
+cd shaila-web
+```
+
+### 2. Instalar dependencias
+
+```bash
+npm install
+```
+
+### 3. Iniciar el servidor de desarrollo
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La aplicación estará disponible en:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Estructura del proyecto
 
-## Learn More
+```text
+shaila-web/
+├── public/              # Recursos estáticos y currículum PDF
+├── src/
+│   ├── app/             # Rutas y configuración de Next.js
+│   ├── components/      # Componentes de la interfaz
+│   ├── dictionaries/    # Traducciones ES, CA y EN
+│   └── lib/             # Funciones y utilidades
+├── package.json
+└── README.md
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts disponibles
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Comando | Descripción |
+|---|---|
+| `npm run dev` | Inicia el servidor de desarrollo |
+| `npm run build` | Genera la versión de producción |
+| `npm run start` | Inicia la aplicación en producción |
+| `npm run lint` | Ejecuta ESLint |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Autoría
 
-## Deploy on Vercel
+**Shaila Martínez**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- GitHub: [@shailamgm](https://github.com/shailamgm)
+- LinkedIn: [Perfil profesional](https://www.linkedin.com/in/shaila-martinez-gonzalez-de-molina)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+<p align="center">
+  Desarrollado con Next.js, TypeScript y Tailwind CSS.
+</p>
