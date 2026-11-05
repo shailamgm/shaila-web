@@ -42,7 +42,7 @@ export const site = {
   photo: null,
 
   /** CV actualizado (2026), servido desde `public/`. */
-  cv: "/cv-shaila-martinez-2026.pdf",
+  cv: "/shailamartinez.pdf",
 
   /** Perfiles externos: solo enlaces, sin conectar nada. */
   socials: {
