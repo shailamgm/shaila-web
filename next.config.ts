@@ -12,6 +12,19 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async headers() {
+    return [
+      {
+        source: "/cv-shaila-martinez-2026.pdf",
+        headers: [
+          {
+            key: "Content-Disposition",
+            value: 'inline; filename="shailamartinez.pdf"',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
