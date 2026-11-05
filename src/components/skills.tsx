@@ -25,16 +25,22 @@ export function Skills({ content, locale, title }: SkillsProps) {
         {groups.map((group, index) => (
           <li key={group.id}>
             <Reveal delay={index * 60} className="h-full">
-              <div className="h-full rounded-2xl border border-white/10 bg-surface/70 p-6 transition-colors hover:border-brand/30">
-                <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-brand-light">
-                  {group.title[locale]}
-                </h3>
+              <div className="surface surface-hover flex h-full flex-col p-5 sm:p-6">
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="mono-label text-brand-light">
+                    {group.title[locale]}
+                  </h3>
+                  <span
+                    aria-hidden="true"
+                    className="font-mono text-[10px] leading-none text-muted-subtle"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {group.items.map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-1 font-mono text-xs text-fg/90"
-                    >
+                    <li key={item} className="chip">
                       {item}
                     </li>
                   ))}

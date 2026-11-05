@@ -7,11 +7,15 @@
     "contact": "Contact",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "changeLanguage": "Change language"
+    "changeLanguage": "Change language",
+    "themeLight": "Light mode",
+    "themeLightOn": "Light mode on",
+    "themeDarkOn": "Dark mode on"
   },
   "hero": {
     "ctaProjects": "View projects",
     "ctaContact": "Contact",
+    "ctaCv": "View / download CV",
     "scroll": "Scroll to see more"
   },
   "sections": {
@@ -32,7 +36,7 @@
     "noLinks": "No links available"
   },
   "experience": {
-    "practice": "Internships",
+    "practice": "Experience",
     "education": "Education",
     "certifications": "Certifications",
     "inProgress": "In progress",
@@ -42,12 +46,34 @@
     "formTitle": "Get in touch",
     "name": "Name",
     "email": "Email",
+    "subject": "Subject",
     "message": "Message",
     "submit": "Send message",
+    "sending": "Sending…",
+    "success": "Message sent. Thanks for reaching out; I'll get back to you as soon as possible.",
+    "error": "The message couldn't be sent. Please try again or email me.",
+    "rateLimited": "You've sent too many messages. Please wait a minute and try again.",
+    "emailSubject": "New message from the portfolio",
+    "privacyNotice": "When you submit this form, the data is sent to Formspree to handle your enquiry.",
+    "privacyPolicy": "Read Formspree's privacy policy",
     "disabledNotice": "The form isn't available yet. In the meantime, you can email me or reach me on LinkedIn.",
+    "errors": {
+      "required": "This field is required.",
+      "nameTooShort": "The name must be at least 2 characters long.",
+      "nameTooLong": "The name can't exceed 100 characters.",
+      "invalidEmail": "Enter a valid email address.",
+      "subjectTooShort": "The subject must be at least 3 characters long.",
+      "subjectTooLong": "The subject can't exceed 150 characters.",
+      "messageTooShort": "The message must be at least 10 characters long.",
+      "messageTooLong": "The message can't exceed 5000 characters."
+    },
     "copyEmail": "Copy email",
     "copied": "Copied!",
-    "emailUnavailable": "Email unavailable"
+    "copyError": "Couldn't copy. Select the address and copy it manually.",
+    "emailUnavailable": "Email unavailable",
+    "githubDescription": "Explore my repositories and projects.",
+    "linkedinDescription": "Discover my professional profile and experience",
+    "phone": "Phone"
   },
   "footer": {
     "rights": "All rights reserved.",

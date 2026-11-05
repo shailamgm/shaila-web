@@ -23,8 +23,8 @@ type ExperienceProps = {
 };
 
 const statusClasses: Record<PracticeStatus, string> = {
-  "en-curso": "border-brand/30 bg-brand/10 text-brand-light",
-  finalizado: "border-white/10 bg-white/[0.04] text-muted",
+  "en-curso": "border-brand/35 bg-brand/10 text-brand-light",
+  finalizado: "border-line bg-elevated text-muted",
 };
 
 function StatusBadge({
@@ -38,7 +38,7 @@ function StatusBadge({
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.14em] ${statusClasses[status]}`}
+      className={`mono-label inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 ${statusClasses[status]}`}
     >
       {inProgress ? (
         <span
@@ -50,6 +50,18 @@ function StatusBadge({
       )}
       {inProgress ? labels.inProgress : labels.completed}
     </span>
+  );
+}
+
+function Subheading({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-3">
+      <h3 className="mono-label text-brand-light">{children}</h3>
+      <span
+        aria-hidden="true"
+        className="h-px flex-1 bg-gradient-to-r from-line to-transparent"
+      />
+    </div>
   );
 }
 
@@ -72,11 +84,9 @@ export function Experience({
     >
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
-          <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-brand-light">
-            {labels.practice}
-          </h3>
+          <Subheading>{labels.practice}</Subheading>
 
-          <div className="mt-6 space-y-8">
+          <div className="mt-6 space-y-9">
             {practices.map((practice, index) => {
               const role = practice.role?.[locale];
               const period = practice.period?.[locale];
@@ -85,14 +95,18 @@ export function Experience({
 
               return (
                 <Reveal key={practice.id} delay={index * 80}>
-                  <article className="relative border-l border-white/10 pl-6">
+                  <article className="relative pl-7">
                     <span
                       aria-hidden="true"
-                      className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full border-2 border-night bg-brand"
+                      className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-line via-line to-transparent"
+                    />
+                    <span
+                      aria-hidden="true"
+                      className="absolute left-0 top-1.5 h-2.5 w-2.5 -translate-x-1/2 rounded-full border border-brand/70 bg-brand/40 ring-4 ring-night"
                     />
 
                     <div className="flex flex-wrap items-center gap-3">
-                      <h4 className="text-lg font-semibold">
+                      <h4 className="text-body font-semibold">
                         {practice.organization[locale]}
                       </h4>
                       {practice.status ? (
@@ -104,7 +118,7 @@ export function Experience({
                     </div>
 
                     {role ? (
-                      <p className="mt-1 text-sm text-brand-light">{role}</p>
+                      <p className="mt-1 text-small text-brand-light">{role}</p>
                     ) : null}
 
                     {period ? (
@@ -114,7 +128,7 @@ export function Experience({
                     ) : null}
 
                     {description ? (
-                      <p className="mt-3 text-sm leading-relaxed text-muted">
+                      <p className="mt-3 text-small leading-relaxed text-muted">
                         {description}
                       </p>
                     ) : null}
@@ -124,7 +138,7 @@ export function Experience({
                         {tasks.map((task) => (
                           <li
                             key={task}
-                            className="flex items-start gap-2 text-sm text-muted"
+                            className="flex items-start gap-2.5 text-small text-muted"
                           >
                             <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-brand-light" />
                             <span>{task}</span>
@@ -140,26 +154,24 @@ export function Experience({
         </div>
 
         <div>
-          <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-brand-light">
-            {labels.education}
-          </h3>
+          <Subheading>{labels.education}</Subheading>
 
-          <div className="mt-6 space-y-6">
+          <div className="mt-6 space-y-4">
             {education.map((entry, index) => {
               const period = entry.period?.[locale];
 
               return (
                 <Reveal key={entry.id} delay={index * 80}>
-                  <article className="rounded-2xl border border-white/10 bg-surface/70 p-5">
+                  <article className="surface p-5">
                     <div className="flex flex-wrap items-start justify-between gap-3">
-                      <h4 className="text-base font-semibold">
+                      <h4 className="text-body font-semibold">
                         {entry.title[locale]}
                       </h4>
                       <StatusBadge status={entry.status} labels={labels} />
                     </div>
 
                     {entry.center ? (
-                      <p className="mt-1.5 text-sm text-muted">
+                      <p className="mt-1.5 text-small text-muted">
                         {entry.center}
                       </p>
                     ) : null}
@@ -177,28 +189,31 @@ export function Experience({
 
           {certifications.length > 0 ? (
             <div className="mt-10">
-              <h3 className="font-mono text-[11px] uppercase tracking-[0.2em] text-brand-light">
-                {labels.certifications}
-              </h3>
+              <Subheading>{labels.certifications}</Subheading>
 
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-4 space-y-2.5">
                 {certifications.map((certification) => (
                   <li
                     key={certification.id}
-                    className="rounded-xl border border-white/10 bg-surface/50 px-5 py-4"
+                    className="surface-flat flex items-start gap-3 px-4 py-3.5 transition-colors hover:border-brand/30"
                   >
-                    <p className="text-sm font-medium text-fg">
-                      {certification.name}
-                    </p>
-                    <p className="mt-0.5 text-xs text-muted">
-                      {certification.issuer}
-                      {certification.year ? (
-                        <span className="font-mono">
-                          {" "}
-                          · {certification.year}
-                        </span>
-                      ) : null}
-                    </p>
+                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-brand/25 bg-brand/10 text-brand-light">
+                      <CheckIcon className="h-3.5 w-3.5" />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-small font-medium text-fg">
+                        {certification.name}
+                      </p>
+                      <p className="mt-0.5 text-xs text-muted">
+                        {certification.issuer}
+                        {certification.year ? (
+                          <span className="font-mono">
+                            {" "}
+                            · {certification.year}
+                          </span>
+                        ) : null}
+                      </p>
+                    </div>
                   </li>
                 ))}
               </ul>

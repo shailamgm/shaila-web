@@ -8,6 +8,7 @@ import type { Locale } from "@/lib/types";
 
 import { CloseIcon, MenuIcon } from "./icons";
 import { LanguageSwitcher } from "./language-switcher";
+import { ThemeToggle } from "./theme-toggle";
 
 type LanguageOption = {
   code: Locale;
@@ -57,38 +58,54 @@ export function SiteHeader({
   const closeMenu = () => setOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-night/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line-soft bg-header backdrop-blur-xl">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-6">
         <Link
           href={`/${locale}`}
-          className="flex items-center gap-3 rounded-md transition-opacity hover:opacity-80"
+          className="group flex items-center gap-3 rounded-lg"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-brand/30 bg-brand/10 font-mono text-sm font-semibold tracking-tight text-brand-light">
-            {monogram}
+          <span className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg border border-line-strong bg-elevated font-mono text-xs font-semibold tracking-tight text-brand-light transition-colors group-hover:border-brand/50">
+            <span
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-br from-brand/20 via-transparent to-brand-cyan/10"
+            />
+            <span className="relative">{monogram}</span>
           </span>
           <span className="hidden text-sm font-semibold tracking-tight sm:block">
             {name}
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted transition-colors hover:text-fg"
+              className="group relative text-sm text-muted transition-colors hover:text-fg"
             >
               {link.label}
+              <span
+                aria-hidden="true"
+                className="absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-gradient-to-r from-brand-light to-brand-cyan transition-transform duration-300 group-hover:scale-x-100 group-focus-visible:scale-x-100"
+              />
             </a>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle
+            labels={{
+              light: dict.nav.themeLight,
+              lightOn: dict.nav.themeLightOn,
+              darkOn: dict.nav.themeDarkOn,
+            }}
+          />
+
           <LanguageSwitcher
             locale={locale}
             options={languageOptions}
             label={dict.nav.changeLanguage}
-            className="hidden md:flex"
+            className="hidden lg:flex"
           />
 
           <button
@@ -98,7 +115,7 @@ export function SiteHeader({
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? dict.nav.closeMenu : dict.nav.openMenu}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-fg transition-colors hover:border-brand/40 hover:bg-brand/10 md:hidden"
+            className="icon-button lg:hidden"
           >
             {open ? (
               <CloseIcon className="h-5 w-5" />
@@ -112,7 +129,7 @@ export function SiteHeader({
       <div
         id="mobile-menu"
         hidden={!open}
-        className="border-t border-white/5 bg-night/95 px-6 pb-6 pt-4 backdrop-blur-md md:hidden"
+        className="border-t border-line-soft bg-menu px-6 pb-6 pt-4 backdrop-blur-xl lg:hidden"
       >
         <nav>
           <ul className="flex flex-col gap-1">
@@ -121,7 +138,7 @@ export function SiteHeader({
                 <a
                   href={link.href}
                   onClick={closeMenu}
-                  className="block rounded-lg px-3 py-2.5 text-base text-muted transition-colors hover:bg-white/[0.04] hover:text-fg"
+                  className="block rounded-lg px-3 py-2.5 text-base text-muted transition-colors hover:bg-elevated hover:text-fg"
                 >
                   {link.label}
                 </a>
@@ -130,7 +147,7 @@ export function SiteHeader({
           </ul>
         </nav>
 
-        <div className="mt-4 border-t border-white/5 pt-4">
+        <div className="mt-4 border-t border-line-soft pt-4">
           <LanguageSwitcher
             locale={locale}
             options={languageOptions}

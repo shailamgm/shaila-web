@@ -40,7 +40,7 @@ export function LanguageSwitcher({
     <div
       role="group"
       aria-label={label}
-      className={`flex items-center gap-0.5 rounded-full border border-white/10 bg-white/[0.04] p-1 ${className}`}
+      className={`flex h-10 items-center gap-0.5 rounded-full border border-line bg-elevated p-1 ${className}`}
     >
       {options.map((option) => {
         const isCurrent = option.code === locale;
@@ -52,10 +52,10 @@ export function LanguageSwitcher({
             hrefLang={option.code}
             lang={option.code}
             aria-current={isCurrent ? "true" : undefined}
-            className={`rounded-full px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] transition-colors ${
+            className={`rounded-full px-2.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] transition-colors ${
               isCurrent
-                ? "bg-brand text-white"
-                : "text-muted hover:bg-white/[0.06] hover:text-fg"
+                ? "bg-brand-deep text-white shadow-[0_2px_10px_-4px_var(--btn-shadow)]"
+                : "text-muted hover:bg-elevated-strong hover:text-fg"
             }`}
           >
             {option.code}

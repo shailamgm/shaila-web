@@ -7,11 +7,15 @@
     "contact": "Contacte",
     "openMenu": "Obre el menú",
     "closeMenu": "Tanca el menú",
-    "changeLanguage": "Canvia la llengua"
+    "changeLanguage": "Canvia la llengua",
+    "themeLight": "Mode clar",
+    "themeLightOn": "Mode clar activat",
+    "themeDarkOn": "Mode fosc activat"
   },
   "hero": {
     "ctaProjects": "Veure projectes",
     "ctaContact": "Contacte",
+    "ctaCv": "Veure / descarregar CV",
     "scroll": "Desplaça't per veure més"
   },
   "sections": {
@@ -32,7 +36,7 @@
     "noLinks": "Sense enllaços disponibles"
   },
   "experience": {
-    "practice": "Pràctiques",
+    "practice": "Experiència",
     "education": "Formació",
     "certifications": "Certificacions",
     "inProgress": "En curs",
@@ -42,12 +46,34 @@
     "formTitle": "Escriu-me",
     "name": "Nom",
     "email": "Correu electrònic",
+    "subject": "Assumpte",
     "message": "Missatge",
     "submit": "Envia el missatge",
+    "sending": "Enviant…",
+    "success": "Missatge enviat. Gràcies per escriure'm; et respondré com més aviat millor.",
+    "error": "No s'ha pogut enviar el missatge. Torna-ho a provar o escriu-me per correu.",
+    "rateLimited": "Has enviat massa missatges. Espera un minut i torna-ho a provar.",
+    "emailSubject": "Nou missatge des del portfolio",
+    "privacyNotice": "En enviar aquest formulari, les dades s'envien a Formspree per gestionar la teva consulta.",
+    "privacyPolicy": "Llegeix la política de privacitat de Formspree",
     "disabledNotice": "El formulari encara no està disponible. Mentrestant, pots escriure'm per correu o contactar amb mi a LinkedIn.",
+    "errors": {
+      "required": "Aquest camp és obligatori.",
+      "nameTooShort": "El nom ha de tenir almenys 2 caràcters.",
+      "nameTooLong": "El nom no pot superar els 100 caràcters.",
+      "invalidEmail": "Introdueix un correu electrònic vàlid.",
+      "subjectTooShort": "L'assumpte ha de tenir almenys 3 caràcters.",
+      "subjectTooLong": "L'assumpte no pot superar els 150 caràcters.",
+      "messageTooShort": "El missatge ha de tenir almenys 10 caràcters.",
+      "messageTooLong": "El missatge no pot superar els 5000 caràcters."
+    },
     "copyEmail": "Copia el correu",
     "copied": "Copiat!",
-    "emailUnavailable": "Correu no disponible"
+    "copyError": "No s'ha pogut copiar. Selecciona l'adreça i copia-la manualment.",
+    "emailUnavailable": "Correu no disponible",
+    "githubDescription": "Consulta els meus repositoris i projectes.",
+    "linkedinDescription": "Coneix el meu perfil i trajectòria professional",
+    "phone": "Telèfon"
   },
   "footer": {
     "rights": "Tots els drets reservats.",

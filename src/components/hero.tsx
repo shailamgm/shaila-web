@@ -1,6 +1,6 @@
 import type { Content, Locale } from "@/lib/types";
 
-import { ArrowDownIcon } from "./icons";
+import { ArrowDownIcon, FileTextIcon } from "./icons";
 import { Typewriter } from "./typewriter";
 
 type HeroProps = {
@@ -9,10 +9,13 @@ type HeroProps = {
   name: string;
   monogram: string;
   role: string;
+  cv: string | null;
   dict: {
     ctaProjects: string;
     ctaContact: string;
+    ctaCv: string;
     scroll: string;
+    externalLink: string;
   };
 };
 
@@ -22,6 +25,7 @@ export function Hero({
   name,
   monogram,
   role,
+  cv,
   dict,
 }: HeroProps) {
   const [firstName, ...rest] = name.split(" ");
@@ -30,31 +34,38 @@ export function Hero({
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative overflow-hidden"
+      className="relative isolate overflow-hidden"
     >
-      <div className="hero-glow absolute inset-0" aria-hidden="true" />
-      <div className="hero-grid absolute inset-0" aria-hidden="true" />
+      <div
+        aria-hidden="true"
+        className="hero-glow absolute inset-0 -z-10"
+      />
+      <div
+        aria-hidden="true"
+        className="blueprint-grid absolute inset-0 -z-10"
+      />
+      <div
+        aria-hidden="true"
+        className="grain absolute inset-0 -z-10"
+      />
 
-      <div className="relative mx-auto grid w-full max-w-6xl gap-14 px-6 pb-20 pt-20 sm:pt-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:pb-28 lg:pt-28">
+      <div className="relative mx-auto grid w-full max-w-6xl gap-14 px-6 pb-20 pt-16 sm:pt-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:gap-16 lg:pb-28 lg:pt-24">
         <div>
-          <p className="font-mono text-sm tracking-[0.18em] text-brand-light">
+          <p className="font-serif text-2xl italic leading-none text-brand-light sm:text-3xl">
             {content.hero.greeting}
           </p>
 
-          <h1
-            id="hero-title"
-            className="mt-4 text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl"
-          >
+          <h1 id="hero-title" className="mt-3 text-display">
             {firstName}{" "}
             <span className="text-gradient">{lastName}</span>
           </h1>
 
-          <p className="mt-6 min-h-[2.75rem] text-xl font-medium text-muted sm:text-2xl">
+          <p className="mt-6 min-h-[2.75rem] text-lead font-medium text-muted">
             <Typewriter words={content.hero.roles} />
           </p>
 
           {content.hero.intro ? (
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
+            <p className="mt-4 max-w-xl text-body leading-relaxed text-muted">
               {content.hero.intro}
             </p>
           ) : null}
@@ -67,50 +78,96 @@ export function Hero({
             <a href="#contact" className="btn-secondary">
               {dict.ctaContact}
             </a>
+            {cv ? (
+              <a
+                href={cv}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                {dict.ctaCv}
+                <FileTextIcon className="h-4 w-4" />
+                <span className="sr-only">{dict.externalLink}</span>
+              </a>
+            ) : null}
           </div>
+
+          <div
+            aria-hidden="true"
+            className="mt-10 hidden h-px w-full max-w-md bg-gradient-to-r from-line to-transparent sm:block"
+          />
         </div>
 
         <div className="relative mx-auto w-full max-w-sm">
           <div
-            className="absolute -inset-6 rounded-full bg-brand/20 blur-3xl"
             aria-hidden="true"
+            className="absolute -inset-8 rounded-full bg-brand/15 blur-3xl"
           />
-          <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-white/10 bg-surface/70 backdrop-blur">
+
+          <div
+            aria-hidden="true"
+            className="corner-marks pointer-events-none absolute -inset-4"
+          />
+
+          <div className="relative flex aspect-square flex-col overflow-hidden rounded-[1.75rem] border border-line bg-card shadow-[0_40px_120px_-60px_var(--glow-brand)] backdrop-blur-md">
             <div
-              className="absolute inset-3 rounded-[1.6rem] border border-brand/20"
               aria-hidden="true"
+              className="blueprint-grid absolute inset-0 opacity-70"
             />
             <div
-              className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.18),transparent_60%)]"
               aria-hidden="true"
+              className="absolute inset-0 bg-[radial-gradient(circle_at_32%_18%,var(--hero-glow-2),transparent_62%)]"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute left-1/2 top-1/2 h-52 w-52 -translate-x-1/2 -translate-y-1/2 rounded-full border border-line-soft sm:h-60 sm:w-60"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full border border-line-soft/60 sm:h-80 sm:w-80"
             />
 
-            <div className="relative flex h-full flex-col items-center justify-center gap-5 px-8 text-center">
+            <div className="relative flex items-center justify-between border-b border-line-soft px-5 py-3.5">
+              <span className="flex items-center gap-1.5" aria-hidden="true">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand/80" />
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-cyan/70" />
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-indigo/60" />
+              </span>
+              <span className="mono-label text-muted-subtle">
+                {locale.toUpperCase()}
+              </span>
+            </div>
+
+            <div className="relative flex flex-1 flex-col items-center justify-center gap-5 px-8 text-center">
               <span
                 aria-hidden="true"
-                className="font-mono text-8xl font-semibold tracking-tight text-gradient sm:text-9xl"
+                className="font-mono text-7xl font-semibold tracking-tight text-gradient sm:text-8xl"
               >
                 {monogram}
               </span>
-              <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+              <span className="mono-label max-w-[15rem] text-muted">
                 {role}
               </span>
             </div>
 
-            <span
-              aria-hidden="true"
-              className="absolute bottom-5 right-6 font-mono text-[10px] tracking-[0.2em] text-muted/60"
-            >
-              {locale.toUpperCase()}
-            </span>
+            <div className="relative flex items-center justify-between gap-3 border-t border-line-soft px-5 py-3.5">
+              <span className="mono-label truncate text-muted-subtle">
+                {name}
+              </span>
+              <span className="flex items-center gap-1" aria-hidden="true">
+                <span className="h-1 w-1 rounded-full bg-brand-light/70" />
+                <span className="h-1 w-1 rounded-full bg-brand-light/40" />
+                <span className="h-1 w-1 rounded-full bg-brand-light/20" />
+              </span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="relative pb-8">
+      <div className="relative pb-10">
         <a
           href="#about"
-          className="mx-auto flex w-fit items-center gap-2 rounded-full px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted transition-colors hover:text-fg"
+          className="mx-auto flex w-fit items-center gap-2 rounded-full px-3 py-1.5 mono-label text-muted transition-colors hover:text-fg"
         >
           <span className="scroll-cue inline-flex" aria-hidden="true">
             <ArrowDownIcon className="h-3.5 w-3.5" />

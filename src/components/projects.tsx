@@ -5,7 +5,7 @@ import type {
   ProjectStatus,
 } from "@/lib/types";
 
-import { CheckIcon, ExternalLinkIcon } from "./icons";
+import { ArrowUpRightIcon, CheckIcon } from "./icons";
 import { Reveal } from "./reveal";
 import { Section } from "./section";
 
@@ -65,24 +65,33 @@ export function Projects({
           return (
             <li key={project.slug}>
               <Reveal delay={index * 90} className="h-full">
-                <article className="group flex h-full flex-col rounded-2xl border border-white/10 bg-surface/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_24px_70px_-40px_rgba(59,130,246,0.65)] sm:p-7">
+                <article className="surface surface-hover group flex h-full flex-col overflow-hidden p-6 sm:p-7">
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  />
+
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-full border border-brand/30 bg-brand/10 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-brand-light">
+                    <span className="mono-label inline-flex items-center gap-1.5 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-brand-light">
+                      <span
+                        aria-hidden="true"
+                        className="h-1 w-1 rounded-full bg-brand-light"
+                      />
                       {kinds[project.kind]}
                     </span>
                     {status ? (
-                      <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+                      <span className="mono-label inline-flex items-center rounded-full border border-line bg-elevated px-3 py-1 text-muted">
                         {status}
                       </span>
                     ) : null}
                   </div>
 
-                  <h3 className="mt-5 text-xl font-semibold tracking-tight sm:text-2xl">
+                  <h3 className="mt-5 text-subtitle">
                     {project.title[locale]}
                   </h3>
 
                   {summary ? (
-                    <p className="mt-3 text-sm leading-relaxed text-muted">
+                    <p className="mt-3 text-small leading-relaxed text-muted">
                       {summary}
                     </p>
                   ) : null}
@@ -92,7 +101,7 @@ export function Projects({
                       {highlights.map((highlight) => (
                         <li
                           key={highlight}
-                          className="flex items-start gap-2 text-sm text-muted"
+                          className="flex items-start gap-2.5 text-small text-muted"
                         >
                           <CheckIcon className="mt-0.5 h-4 w-4 shrink-0 text-brand-light" />
                           <span>{highlight}</span>
@@ -104,10 +113,7 @@ export function Projects({
                   {project.stack.length > 0 ? (
                     <ul className="mt-5 flex flex-wrap gap-2">
                       {project.stack.map((technology) => (
-                        <li
-                          key={technology}
-                          className="rounded-md border border-white/10 bg-white/[0.04] px-2.5 py-1 font-mono text-[11px] text-fg/90"
-                        >
+                        <li key={technology} className="chip">
                           {technology}
                         </li>
                       ))}
@@ -115,16 +121,16 @@ export function Projects({
                   ) : null}
 
                   {project.links.repo || project.links.demo ? (
-                    <div className="mt-auto flex flex-wrap items-center gap-4 pt-6">
+                    <div className="mt-auto flex flex-wrap items-center gap-5 border-t border-line-soft pt-5">
                       {project.links.repo ? (
                         <a
                           href={project.links.repo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-sm font-medium text-brand-light transition-colors hover:text-fg"
+                          className="group/link inline-flex items-center gap-1.5 text-small font-medium text-brand-light transition-colors hover:text-fg"
                         >
                           {labels.viewRepo}
-                          <ExternalLinkIcon className="h-4 w-4" />
+                          <ArrowUpRightIcon className="h-4 w-4 transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
                           <span className="sr-only">
                             {labels.externalLink}
                           </span>
@@ -136,10 +142,10 @@ export function Projects({
                           href={project.links.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-sm font-medium text-brand-light transition-colors hover:text-fg"
+                          className="group/link inline-flex items-center gap-1.5 text-small font-medium text-brand-light transition-colors hover:text-fg"
                         >
                           {labels.viewDemo}
-                          <ExternalLinkIcon className="h-4 w-4" />
+                          <ArrowUpRightIcon className="h-4 w-4 transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
                           <span className="sr-only">
                             {labels.externalLink}
                           </span>

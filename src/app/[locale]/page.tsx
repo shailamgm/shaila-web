@@ -49,7 +49,11 @@ export default async function LocalePage({ params }: LocalePageProps) {
           name={site.name}
           monogram={site.monogram}
           role={site.role[locale]}
-          dict={dict.hero}
+          cv={site.cv}
+          dict={{
+            ...dict.hero,
+            externalLink: dict.a11y.externalLink,
+          }}
         />
 
         <About content={content} title={dict.sections.about} />
@@ -83,6 +87,8 @@ export default async function LocalePage({ params }: LocalePageProps) {
           email={site.email}
           phone={site.phone}
           linkedin={site.socials.linkedin}
+          github={site.socials.github}
+          endpoint={site.form.enabled ? site.form.endpoint : null}
           labels={{
             ...dict.contact,
             externalLink: dict.a11y.externalLink,

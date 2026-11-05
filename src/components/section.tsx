@@ -23,30 +23,37 @@ export function Section({
     <section
       id={id}
       aria-labelledby={`${id}-title`}
-      className={`scroll-mt-24 border-t border-white/5 py-20 sm:py-24 ${className}`}
+      className={`relative scroll-mt-24 py-20 sm:py-28 ${className}`}
     >
+      <div
+        aria-hidden="true"
+        className="section-rule absolute inset-x-0 top-0 h-px"
+      />
+
       <div className="mx-auto w-full max-w-6xl px-6">
         <Reveal>
-          <div className="flex items-center gap-4">
-            <span className="font-mono text-xs tracking-[0.2em] text-brand-light">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-7">
+            <span
+              aria-hidden="true"
+              className="mono-label inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line bg-elevated text-brand-light"
+            >
               {index}
             </span>
-            <span className="h-px w-8 bg-brand/40" aria-hidden="true" />
-            <h2
-              id={`${id}-title`}
-              className="text-2xl font-semibold tracking-tight sm:text-3xl"
-            >
-              {title}
-            </h2>
+
+            <div className="max-w-2xl">
+              <h2 id={`${id}-title`} className="text-title">
+                {title}
+              </h2>
+              {intro ? (
+                <p className="mt-4 text-body leading-relaxed text-muted sm:text-lead">
+                  {intro}
+                </p>
+              ) : null}
+            </div>
           </div>
-          {intro ? (
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-              {intro}
-            </p>
-          ) : null}
         </Reveal>
 
-        <div className="mt-10">{children}</div>
+        <div className="mt-10 sm:mt-12">{children}</div>
       </div>
     </section>
   );

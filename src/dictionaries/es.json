@@ -7,11 +7,15 @@
     "contact": "Contacto",
     "openMenu": "Abrir menú",
     "closeMenu": "Cerrar menú",
-    "changeLanguage": "Cambiar idioma"
+    "changeLanguage": "Cambiar idioma",
+    "themeLight": "Modo claro",
+    "themeLightOn": "Modo claro activado",
+    "themeDarkOn": "Modo oscuro activado"
   },
   "hero": {
     "ctaProjects": "Ver proyectos",
     "ctaContact": "Contacto",
+    "ctaCv": "Ver / descargar CV",
     "scroll": "Desliza para ver más"
   },
   "sections": {
@@ -32,7 +36,7 @@
     "noLinks": "Sin enlaces disponibles"
   },
   "experience": {
-    "practice": "Prácticas",
+    "practice": "Experiencia",
     "education": "Formación",
     "certifications": "Certificaciones",
     "inProgress": "En curso",
@@ -42,12 +46,34 @@
     "formTitle": "Escríbeme",
     "name": "Nombre",
     "email": "Correo electrónico",
+    "subject": "Asunto",
     "message": "Mensaje",
     "submit": "Enviar mensaje",
+    "sending": "Enviando…",
+    "success": "Mensaje enviado. Gracias por escribirme; te responderé lo antes posible.",
+    "error": "No se ha podido enviar el mensaje. Inténtalo de nuevo o escríbeme por correo.",
+    "rateLimited": "Has enviado demasiados mensajes. Espera un minuto e inténtalo de nuevo.",
+    "emailSubject": "Nuevo mensaje desde el portfolio",
+    "privacyNotice": "Al enviar este formulario, los datos se envían a Formspree para gestionar tu consulta.",
+    "privacyPolicy": "Leer la política de privacidad de Formspree",
     "disabledNotice": "El formulario todavía no está disponible. Mientras tanto, puedes escribirme por correo o contactar conmigo en LinkedIn.",
+    "errors": {
+      "required": "Este campo es obligatorio.",
+      "nameTooShort": "El nombre debe tener al menos 2 caracteres.",
+      "nameTooLong": "El nombre no puede superar los 100 caracteres.",
+      "invalidEmail": "Introduce un correo electrónico válido.",
+      "subjectTooShort": "El asunto debe tener al menos 3 caracteres.",
+      "subjectTooLong": "El asunto no puede superar los 150 caracteres.",
+      "messageTooShort": "El mensaje debe tener al menos 10 caracteres.",
+      "messageTooLong": "El mensaje no puede superar los 5000 caracteres."
+    },
     "copyEmail": "Copiar correo",
     "copied": "¡Copiado!",
-    "emailUnavailable": "Correo no disponible"
+    "copyError": "No se ha podido copiar. Selecciona la dirección y cópiala manualmente.",
+    "emailUnavailable": "Correo no disponible",
+    "githubDescription": "Ver mis repositorios y proyectos.",
+    "linkedinDescription": "Conoce mi perfil y trayectoria profesional",
+    "phone": "Teléfono"
   },
   "footer": {
     "rights": "Todos los derechos reservados.",

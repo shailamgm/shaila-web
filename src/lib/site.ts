@@ -41,27 +41,26 @@ export const site = {
   /** Foto real futura. Mientras sea `null`, se usa el monograma. */
   photo: null,
 
-  /** CV descargable por idioma: pendiente. */
-  cv: null,
+  /** CV actualizado (2026), servido desde `public/`. */
+  cv: "/cv-shaila-martinez-2026.pdf",
 
   /** Perfiles externos: solo enlaces, sin conectar nada. */
   socials: {
-    github: null,
+    github: "https://github.com/shailamgm",
     linkedin: "https://www.linkedin.com/in/shaila-martinez-gonzalez-de-molina",
   },
 
   /**
    * Formulario de contacto.
    *
-   * Visible pero DESACTIVADO: todavía no hay proveedor elegido.
-   * No se guardan identificadores de servicio ni variables de entorno.
-   * Cuando exista un servicio real, se rellena `provider` + `endpoint`
-   * y se cambia `enabled` a `true`.
+   * El endpoint de Formspree es público: no es una API key ni una credencial.
+   * Si `enabled` es `false` o falta `endpoint`, el formulario se muestra
+   * desactivado y no envía nada.
    */
   form: {
-    enabled: false,
-    provider: null,
-    endpoint: null,
+    enabled: true,
+    provider: "Formspree",
+    endpoint: "https://formspree.io/f/xwllwgvk",
   },
 } as const;
 
