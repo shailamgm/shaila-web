@@ -236,7 +236,7 @@ const es: Content = {
     practice: [
       {
         id: "hospital-blanes",
-        organization: l("Hospital Blanes", "Hospital Blanes", "Hospital Blanes"),
+        organization: l("Hospital Comarcal de Blanes", "Hospital Comarcal de Blanes", "Hospital Comarcal de Blanes"),
         role: l(
           "Sistemas y Soporte IT",
           "Sistemes i Suport IT",
@@ -247,7 +247,7 @@ const es: Content = {
           "Del 25/02/2026 a l'actualitat",
           "From 25 Feb 2026 to present",
         ),
-        status: "en-curso",
+        status: null,
         description: null, // TODO
         tasks: l(
           [
@@ -379,7 +379,7 @@ const ca: Content = {
   },
 
   hero: {
-    greeting: "Hola, soc",
+    greeting: "Hola, sóc",
     roles: ["Sistemes i Suport IT", "Administració de sistemes", "Suport a usuaris"],
     intro: null,
   },
@@ -588,7 +588,7 @@ const ca: Content = {
     practice: [
       {
         id: "hospital-blanes",
-        organization: l("Hospital Blanes", "Hospital Blanes", "Hospital Blanes"),
+        organization: l("Hospital Comarcal de Blanes", "Hospital Comarcal de Blanes", "Hospital Comarcal de Blanes"),
         role: l(
           "Sistemas y Soporte IT",
           "Sistemes i Suport IT",
@@ -599,7 +599,7 @@ const ca: Content = {
           "Del 25/02/2026 a l'actualitat",
           "From 25 Feb 2026 to present",
         ),
-        status: "en-curso",
+        status: null,
         description: null,
         tasks: l(
           [
@@ -940,7 +940,7 @@ const en: Content = {
     practice: [
       {
         id: "hospital-blanes",
-        organization: l("Hospital Blanes", "Hospital Blanes", "Hospital Blanes"),
+        organization: l("Hospital Comarcal de Blanes", "Hospital Comarcal de Blanes", "Hospital Comarcal de Blanes"),
         role: l(
           "Sistemas y Soporte IT",
           "Sistemes i Suport IT",
@@ -951,7 +951,7 @@ const en: Content = {
           "Del 25/02/2026 a l'actualitat",
           "From 25 Feb 2026 to present",
         ),
-        status: "en-curso",
+        status: null,
         description: null,
         tasks: l(
           [
